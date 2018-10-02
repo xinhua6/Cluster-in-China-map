@@ -110,11 +110,11 @@ from urllib.request import urlopen
 import hashlib
 import json
 def get_urt(addtress):
-    queryStr = '/geocoder/v2/?address=%s&output=json&ak=MRe5GRd5q51anxVOTr2HpGqqHsSnRDQ3' % addtress
+    queryStr = '/geocoder/v2/?address=%s&output=json&ak=个人申请的密钥' % addtress
  # 对queryStr进行转码，safe内的保留字符不转换
     encodedStr = parse.quote(queryStr, safe="/:=&?#+!$,;'@()*[]")
  # 在最后直接追加上yoursk
-    rawStr = encodedStr + '11991650'
+    rawStr = encodedStr + '你个人的sk'
  #计算sn
     sn = (hashlib.md5(parse.quote_plus(rawStr).encode("utf8")).hexdigest())
  #由于URL里面含有中文，所以需要用parse.quote进行处理，然后返回最终可调用的url
